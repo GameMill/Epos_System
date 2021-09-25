@@ -1,0 +1,25 @@
+﻿<Page x:Class="EPOS.Pages.Dashboard"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EPOS.Pages"
+      mc:Ignorable="d" 
+      Title="Dashboard"
+      d:DesignHeight="300" d:DesignWidth="300">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Margin="5" Click="OpenInvoice">Invoice</Button>
+        <Button Grid.Column="2" Margin="5">Order</Button>
+        <Button Grid.Row="1" Margin="5">Setting</Button>
+        <Button Grid.Row="1" Grid.Column="2" Margin="5">?</Button>
+    </Grid>
+</Page>

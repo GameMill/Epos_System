@@ -1,0 +1,25 @@
+﻿<Window x:Class="EPOS.Windows.Attribute"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EPOS.Windows"
+        mc:Ignorable="d"
+        Title="Attribute" Height="100" Width="400" Closed="Window_Closed">
+    <Window.Resources>
+        <local:Math x:Key="MathConverter" />
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource TextboxRowHeight}"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Name="test" Text="Test" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource RegularFont}"/>
+        <TextBox Name="Box" Grid.Column="1" VerticalAlignment="Center"  TextAlignment="Center" Padding="0,5" Style="{StaticResource RegularFont}"/>
+        <Button Grid.Row="1" Style="{StaticResource RegularFontBold}" Grid.ColumnSpan="2" Click="Button_Click">Add</Button>
+    </Grid>
+</Window>

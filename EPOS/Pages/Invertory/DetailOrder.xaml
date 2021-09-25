@@ -1,0 +1,38 @@
+﻿<Page x:Class="EPOS.Pages.Invertory.DetailOrder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EPOS.Pages.Invertory"
+      mc:Ignorable="d" 
+      d:DesignHeight="461" d:DesignWidth="985"
+      Title="DetailOrder">
+
+    <Grid Height="461" Width="985" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource TextboxRowHeight}"/>
+            <RowDefinition/>
+            <RowDefinition Style="{StaticResource TextboxRowHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Name="InvoiceNumber" Margin="146,10,0,0" TextWrapping="Wrap" Style="{StaticResource RegularFont}" Text="????????" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBlock Grid.Column="0" HorizontalAlignment="Left" Margin="6,10,0,0" TextWrapping="Wrap" Style="{StaticResource RegularFont}" Text="Invoice Number:" VerticalAlignment="Top"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="left" TextWrapping="Wrap" Style="{StaticResource RegularFont}" Text="Total Paid:" VerticalAlignment="Top" Margin="5,13,0,0"/>
+        <TextBlock Grid.Column="2" HorizontalAlignment="left" Name="TotalPaid" TextWrapping="Wrap" Style="{StaticResource RegularFont}" Text="?????" VerticalAlignment="Top" Margin="93,13,0,0"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="left" TextWrapping="Wrap" Style="{StaticResource RegularFont}" Text="Status:" VerticalAlignment="Top" Margin="6,10,0,0"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="left" x:Name="Status" TextWrapping="Wrap" Style="{StaticResource RegularFont}" Text="Test" VerticalAlignment="Top" Margin="65,10,0,0"/>
+
+        <DataGrid Style="{StaticResource RegularFont}" AutoGeneratingColumn="ProductList_AutoGeneratingColumn" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" IsReadOnly="True" Name="ProductList" Grid.ColumnSpan="3" Grid.Row="1">
+
+        </DataGrid>
+
+        <Button Grid.Row="2" Style="{StaticResource ButtonNormal}">Save Changes</Button>
+        <Button Grid.Row="2" Grid.Column="2" Style="{StaticResource ButtonBad}">Void Order</Button>
+        <CheckBox Content="Admin" Checked="CheckBox_Checked" Unchecked="CheckBox_Unchecked" Grid.Column="2" HorizontalAlignment="Left" Margin="164,14,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Page>

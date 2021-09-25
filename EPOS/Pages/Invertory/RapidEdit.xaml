@@ -1,0 +1,44 @@
+﻿<Page x:Class="EPOS.Pages.Invertory.RapidEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EPOS.Pages.Invertory"
+      mc:Ignorable="d" 
+      d:DesignHeight="461" d:DesignWidth="985"
+      Title="RapidEdit">
+
+    <Grid Height="461" Width="985" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource TextboxRowHeight}"/>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Style="{StaticResource ButtonRowHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" VerticalAlignment="Center" Padding="7"  Name="FilterText" Style="{StaticResource RegularFont}" TextAlignment="Center" TextChanged="Filter_TextChanged"/>
+            <ComboBox Grid.Column="1" SelectedIndex="0" VerticalAlignment="Center" Padding="10" Style="{StaticResource RegularFont}" Name="FilterSelection" SelectionChanged="Filter_SelectionChanged">
+                <ListBoxItem Content="Name"/>
+                <ListBoxItem Content="Price LessThan"/>
+                <ListBoxItem Content="Price MoreThan"/>
+            </ComboBox>
+        </Grid>
+        <DataGrid Style="{StaticResource RegularFont}" CanUserDeleteRows="False" Name="gridEmployees" ItemsSource="{Binding}" Grid.Row="1">
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Header="Delete">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Tag="{Binding ID}" Click="Delete_Click" Content="X" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Style="{StaticResource ButtonNormalBold}" Grid.Row="2" Content="SaveChanges" Click="SaveChanges_Click" />
+    </Grid>
+</Page>

@@ -1,0 +1,28 @@
+﻿<Page x:Class="EPOS.Pages.Invertory.AddMixAndMatch"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EPOS.Pages.Invertory"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="985"
+      Title="AddMixAndMatch">
+
+    <Grid Height="461" Width="985" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Style="{StaticResource ButtonRowHeight}"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource ButtonNormalBold}" Content="Cancel" Click="CancelChanges_Click" />
+            <Button Grid.Column="2" Style="{StaticResource ButtonNormalBold}" Content="SaveChanges" Click="SaveChanges_Click" />
+
+        </Grid>
+    </Grid>
+</Page>

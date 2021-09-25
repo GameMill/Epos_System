@@ -1,0 +1,32 @@
+﻿<Page x:Class="EPOS.Pages.Invertory.Main"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:EPOS.Pages.Invertory"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="985"
+      Title="Main">
+
+    <Grid Height="461" Width="985" VerticalAlignment="Top" HorizontalAlignment="Left">
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource TextboxRowHeight}"/>
+
+            <RowDefinition Height="*"/>
+            <RowDefinition Style="{StaticResource ButtonRowHeight}"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+            <TextBox Grid.Column="0" VerticalAlignment="Center" Padding="7"  Name="FilterText" Style="{StaticResource RegularFont}" TextAlignment="Center" TextChanged="Filter_TextChanged"/>
+            <ComboBox Style="{StaticResource RegularFont}" Grid.Column="1" SelectedIndex="0" VerticalAlignment="Center" Padding="10" Name="FilterSelection" SelectionChanged="Filter_SelectionChanged">
+                <ListBoxItem Content="Name"/>
+                <ListBoxItem Content="Price LessThan"/>
+                <ListBoxItem Content="Price MoreThan"/>
+            </ComboBox>
+        </Grid>
+        <DataGrid Style="{StaticResource RegularFont}" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Name="gridInventory" MouseDoubleClick="ListView_MouseDoubleClick" ItemsSource="{Binding}" Grid.Row="1"/>
+    </Grid>
+</Page>
